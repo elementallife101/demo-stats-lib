@@ -5,6 +5,7 @@ A simple library for calculating basic statistics.
 """
 
 from typing import List, Union
+import math
 
 
 def mean(data: List[Union[int, float]]) -> float:
@@ -40,3 +41,6 @@ def variance(data: List[Union[int, float]]) -> float:
     """
     avg = mean(data)
     return sum((x - avg) ** 2 for x in data) / len(data)
+
+def std_dev(data):
+    return math.sqrt(variance(data))
